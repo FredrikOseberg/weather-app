@@ -1,0 +1,190 @@
+$white: #fff;
+$dark-blue: #2c3e50;
+$grey: #635b5b;
+$box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+
+body {
+	background-color: $dark-blue;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	padding-top: 100px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.weatherBox, .activityBox, .todo {
+	background-color: $dark-blue;
+	border-radius: 3px;
+	color: $white;
+	padding: 20px;
+	text-align: center;
+	box-shadow: $box-shadow;
+	margin-top: 15px;
+	max-width: 400px;
+}
+
+// Weatherbox styles
+
+.weatherBoxWrapper {
+	padding-top: 15px;
+}
+
+#weatherLocation {
+	font-size: 2em;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+}
+
+#weatherTemperature {
+	font-size: 1.1em;
+	transition: opacity 1s ease;
+}
+
+#weatherDescription {
+	font-size: 1.1em;
+	text-align: left;
+}
+
+// Activity box styles
+
+.activityBox {
+	h3 {
+		font-size: 2em;
+	}
+
+	.activityItem, .activityDetails {
+		color: $grey;
+		box-shadow: $box-shadow;
+		width: 100%;
+		background-color: $white;
+		border-radius: 3px;
+		.col {
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		.showDetails {
+			&:hover {
+				cursor: pointer;
+				opacity: 0.5;
+			}
+		}
+		img {
+			display: block;
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+			width: 100%;
+			height: 100%;
+		}
+		h4 {
+			font-size: 1.2em;
+		}
+		.activityAdd {
+			border: 1px solid $grey;
+			border-radius: 100%;
+			background-color: $white;
+			height: 40px;
+			width: 40px;
+			padding: 5px;
+			font-size: 1.5em;
+			transition: 1s;
+			&:hover {
+				background-color: #635b5b;
+				color: $white;
+			}
+		}
+	}
+	.activityDetails {
+		padding: 20px;
+		margin-bottom: 15px;
+		transition: all 1s ease;
+		width: 200px;
+		.col {
+			display: flex;
+			flex-direction: row;
+			.fa-times {
+				margin-left: auto;
+				font-size: 1.3rem;
+				cursor:pointer;
+			}
+		}
+		.row {
+			margin-bottom: 0;
+		}
+		img {
+			height: 60px;
+			width: 60px;
+			border-radius: 100%;
+		}
+		h5 {
+			font-size: 1.2rem;
+		}
+	}
+	.hideDetails {
+		display: none;
+	}
+	.activityDetailsItem {
+		padding: 10px 0 18px 0;
+	}
+	.activityDetails100 {
+		width: 100%;
+	}
+}
+
+
+
+// todoList styles
+
+.todo {
+	h3 {
+		font-size: 2em;
+	}
+	ul {
+		margin-top: 40px;
+		li {
+			background-color: $white;
+			border-radius: 3px;
+			padding: 10px;
+			color: $grey;
+			display: flex;
+			align-items: center;
+			margin: 10px 0;
+			.fa {
+				margin-left: auto;
+				font-size: 1.2em;
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+// Icon styles
+
+.fa {
+	font-size: 2em;
+}
+
+.fa-sun-o {
+	color: #f1c40f;
+}
+
+.fa-tint {
+	color: #3498db;
+}
+
+// media queries
+
+@media (max-width: 600px) {
+	.weatherBox, .activityBox, .todo {
+		max-width: 100%;
+	}
+}
