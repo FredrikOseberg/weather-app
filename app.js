@@ -27,6 +27,7 @@ fetch(`http://ip-api.com/json`)
 	fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${data.lat}&lon=${data.lon}&units=Imperial&APPID=${weatherApi}`)
 	.then(res => res.json())
 	.then(data => {
+		console.log(data);
 		updateWeatherBox(data);
 		renderSuggestedActivities(data.weather[0].main);
 	});
